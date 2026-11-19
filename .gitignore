@@ -1,0 +1,3 @@
+# Design inspector screenshots and reports (regenerated on each run)
+.taste-skill/*
+!.taste-skill/direction.json

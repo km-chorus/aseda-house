@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aseda House · A coastal hotel in Labadi, Accra</title>
+  <meta name="description" content="Aseda House is a 48-room hotel on the coast at Labadi, Accra: rooms and suites by the sea, Kantamanto Table restaurant, a saltwater pool and the Shea Room spa.">
+  <meta name="theme-color" content="#F6F5F1">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,30&family=Instrument+Sans:wght@400..600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="preload" as="image" href="assets/images/hero/dusk-pool-2400.webp" imagesrcset="assets/images/hero/dusk-pool-1200.webp 1200w, assets/images/hero/dusk-pool-2400.webp 2400w" imagesizes="100vw">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Site header: clear over the hero, then a solid bar -->
+  <header class="site-header is-clear" data-header>
+    <div class="site-header__inner">
+      <a class="wordmark" href="index.html" aria-label="Aseda House, home">Aseda House</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#dining">Dining</a></li>
+          <li><a href="#wellness">Wellness</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </nav>
+      <a class="site-header__phone tabular" href="tel:+233302701840">+233 30 270 1840</a>
+      <a class="btn btn--accent btn--sm site-header__book" href="#top-booking" data-book-jump>Book a stay</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <i class="bi bi-list" aria-hidden="true"></i><span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="mobile-menu__top">
+      <a class="wordmark" href="index.html">Aseda House</a>
+      <button class="menu-toggle" type="button" data-menu-close>
+        <i class="bi bi-x-lg" aria-hidden="true"></i><span class="visually-hidden">Close menu</span>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="#rooms">Rooms and suites</a></li>
+        <li><a href="#dining">Dining</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+          <li><a href="#events">Events</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--accent btn--block" href="#top-booking">Book a stay</a>
+      <a class="mobile-menu__phone" href="tel:+233302701840">+233 30 270 1840</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" data-ground="ink" aria-labelledby="hero-title">
+      <img class="hero__img"
+           src="assets/images/hero/dusk-pool-2400.webp"
+           srcset="assets/images/hero/dusk-pool-1200.webp 1200w, assets/images/hero/dusk-pool-2400.webp 2400w"
+           sizes="100vw"
+           width="2400" height="1600"
+           alt="The pool at dusk, still enough to hold the palms and a pink evening sky, with the white walls of the house behind"
+           fetchpriority="high">
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__copy">
+        <h1 class="hero__title t-display" id="hero-title">Stay by the sea in&nbsp;Accra</h1>
+        <p class="hero__lede">A 48-room hotel on the coast at Labadi, ten minutes from Osu and twenty-five from Kotoka Airport.</p>
+      </div>
+
+      <!-- Booking bar: works without script as a plain GET form to the booking page -->
+      <form class="booking-bar" id="top-booking" action="booking.html" method="get" aria-label="Check availability" data-booking>
+        <div class="booking-bar__field">
+          <label for="bk-in">Arrive</label>
+          <input id="bk-in" name="checkin" type="date" required data-bk-in>
+        </div>
+        <div class="booking-bar__field">
+          <label for="bk-out">Depart</label>
+          <input id="bk-out" name="checkout" type="date" required data-bk-out>
+        </div>
+        <div class="booking-bar__field">
+          <label for="bk-guests">Guests</label>
+          <select id="bk-guests" name="guests" data-bk-guests>
+            <option value="1">1 adult</option>
+            <option value="2" selected>2 adults</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+          </select>
+        </div>
+        <div class="booking-bar__field booking-bar__field--wide">
+          <label for="bk-room">Room</label>
+          <select id="bk-room" name="room" data-bk-room>
+            <option value="garden-room" data-rate="185" data-max="2">Garden Room</option>
+            <option value="ocean-view-room" data-rate="240" data-max="2" selected>Ocean View Room</option>
+            <option value="courtyard-studio" data-rate="275" data-max="3">Courtyard Studio</option>
+            <option value="junior-suite" data-rate="360" data-max="3">Junior Suite</option>
+            <option value="ocean-suite" data-rate="520" data-max="3">Ocean Suite</option>
+            <option value="residence" data-rate="780" data-max="5">Two-Bedroom Residence</option>
+          </select>
+        </div>
+        <button class="btn btn--accent booking-bar__submit" type="submit">Check availability</button>
+        <p class="booking-bar__quote" aria-live="polite" data-bk-quote>Best rate, breakfast included, when you book with the house.</p>
+      </form>
+    </section>
+
+    <!-- ============ Welcome ============ -->
+    <section class="section" id="welcome" aria-labelledby="welcome-title">
+      <div class="container split">
+        <div class="split__text">
+          <h2 class="t-h2" id="welcome-title" data-reveal>Aseda means thank you</h2>
+          <p class="lead" data-reveal style="--i:1">A family home from 1962, now a 48-room hotel where the garden ends at the Atlantic.</p>
+          <p data-reveal style="--i:2">We kept the deep verandas, the louvred shutters and the habit of feeding everyone who walks through the gate. Our staff will know how you take your coffee by the second morning.</p>
+          <dl class="facts" data-reveal style="--i:3">
+            <div><dt>48</dt><dd>rooms and suites</dd></div>
+            <div><dt>4 min</dt><dd>walk to Labadi Beach</dd></div>
+            <div><dt>25 min</dt><dd>from Kotoka Airport</dd></div>
+          </dl>
+        </div>
+        <figure class="split__media" data-reveal style="--i:1">
+          <img src="assets/images/exterior/palms-facade-1400.webp"
+               srcset="assets/images/exterior/palms-facade-800.webp 800w, assets/images/exterior/palms-facade-1400.webp 1400w"
+               sizes="(min-width: 960px) 50vw, 100vw" width="1400" height="933" loading="lazy"
+               alt="Royal palms rising above the pool terrace and the long white wing of guest rooms">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Rooms ============ -->
+    <section class="section section--tint" id="rooms" aria-labelledby="rooms-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="t-h2" id="rooms-title" data-reveal>Rooms and suites</h2>
+          <p data-reveal style="--i:1">Every stay includes breakfast, a rain shower, air conditioning and fast Wi-Fi. Prices are per night for two guests.</p>
+        </div>
+        <ul class="room-grid">
+          <li class="room-card" data-reveal>
+            <a href="booking.html?room=garden-room">
+              <figure class="room-card__img"><img src="assets/images/rooms/garden-room-800.webp" width="800" height="533" loading="lazy" alt="Garden Room: a timber-framed bed under warm lamps, louvred doors to the garden"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Garden Room</h3>
+                <p class="room-card__meta">28 m² · King or twin · Up to 2 guests</p>
+                <p class="room-card__price">From <strong class="tabular">$185</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+          <li class="room-card" data-reveal style="--i:1">
+            <a href="booking.html?room=ocean-view-room">
+              <figure class="room-card__img"><img src="assets/images/rooms/ocean-view-room-800.webp" width="800" height="533" loading="lazy" alt="Ocean View Room: round-topped windows open onto the sea, the bed facing the view"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Ocean View Room</h3>
+                <p class="room-card__meta">32 m² · King · Balcony over the sea</p>
+                <p class="room-card__price">From <strong class="tabular">$240</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+          <li class="room-card" data-reveal style="--i:2">
+            <a href="booking.html?room=courtyard-studio">
+              <figure class="room-card__img"><img src="assets/images/rooms/courtyard-studio-800.webp" width="800" height="533" loading="lazy" alt="Courtyard Studio: two beds and a work table in a bright room with a timber ceiling"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Courtyard Studio</h3>
+                <p class="room-card__meta">38 m² · Sleeps 3 · Kitchenette</p>
+                <p class="room-card__price">From <strong class="tabular">$275</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+          <li class="room-card" data-reveal>
+            <a href="booking.html?room=junior-suite">
+              <figure class="room-card__img"><img src="assets/images/rooms/junior-suite-1400.webp" width="1400" height="933" loading="lazy" alt="Junior Suite: a tufted sofa at the foot of a wide bed, tall curtains drawn back"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Junior Suite</h3>
+                <p class="room-card__meta">46 m² · Sitting area · Airport car included</p>
+                <p class="room-card__price">From <strong class="tabular">$360</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+          <li class="room-card" data-reveal style="--i:1">
+            <a href="booking.html?room=ocean-suite">
+              <figure class="room-card__img"><img src="assets/images/rooms/ocean-suite-800.webp" width="800" height="533" loading="lazy" alt="Ocean Suite: folding timber doors open the bedroom to the terrace and the sea"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Ocean Suite</h3>
+                <p class="room-card__meta">64 m² · Corner terrace · Sunset views</p>
+                <p class="room-card__price">From <strong class="tabular">$520</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+          <li class="room-card" data-reveal style="--i:2">
+            <a href="booking.html?room=residence">
+              <figure class="room-card__img"><img src="assets/images/rooms/residence-800.webp" width="800" height="533" loading="lazy" alt="Two-Bedroom Residence: a glass-walled main bedroom with a sitting area and timber floor"></figure>
+              <div class="room-card__body">
+                <h3 class="room-card__name">Two-Bedroom Residence</h3>
+                <p class="room-card__meta">110 m² · Sleeps 5 · Private plunge pool</p>
+                <p class="room-card__price">From <strong class="tabular">$780</strong> a night</p>
+                <span class="room-card__cta">View rates <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Dining ============ -->
+    <section class="section" id="dining" aria-labelledby="dining-title">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <h2 class="t-h2" id="dining-title" data-reveal>Dining</h2>
+          <p class="lead" data-reveal style="--i:1">Ghanaian and coastal West African cooking from early morning, and a roof bar that pours until midnight.</p>
+          <ul class="venues" data-reveal style="--i:2">
+            <li class="venue">
+              <div class="venue__head">
+                <h3 class="venue__name">Kantamanto Table</h3>
+                <p class="venue__status" data-live-status="kitchen">06:30 to 22:30</p>
+              </div>
+              <p>Breakfast on the terrace, then grilled tilapia with banku, light soup with fufu and jollof with smoked prawns.</p>
+            </li>
+            <li class="venue">
+              <div class="venue__head">
+                <h3 class="venue__name">Tide Bar</h3>
+                <p class="venue__status" data-live-status="bar">17:00 to midnight</p>
+              </div>
+              <p>Sunset on the roof: sobolo spritz, palm wine sour and ginger beer brewed in the house.</p>
+            </li>
+          </ul>
+          <a class="btn btn--outline" href="mailto:dining@asedahouse.com?subject=Table%20at%20Kantamanto%20Table" data-reveal style="--i:3">Reserve a table</a>
+        </div>
+        <figure class="split__media" data-reveal>
+          <img src="assets/images/dining/terrace-1200.webp"
+               srcset="assets/images/dining/terrace-1200.webp 1200w, assets/images/dining/terrace-2000.webp 2000w"
+               sizes="(min-width: 960px) 50vw, 100vw" width="1200" height="800" loading="lazy"
+               alt="The covered terrace of Kantamanto Table, set for lunch, the sea beyond the rail">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Wellness ============ -->
+    <section class="section section--tint" id="wellness" aria-labelledby="wellness-title">
+      <div class="container split">
+        <div class="split__text">
+          <h2 class="t-h2" id="wellness-title" data-reveal>Pool, spa and gym</h2>
+          <p class="lead" data-reveal style="--i:1">Everything is a short walk across the garden from your door.</p>
+          <ul class="checklist" data-reveal style="--i:2">
+            <li><strong>25-metre saltwater pool.</strong> Shaded until noon, lifeguard from 06:00 to 21:00.</li>
+            <li><strong>The Shea Room spa.</strong> Four treatment rooms using shea butter from Tamale and black soap from Kumasi.</li>
+            <li><strong>Gym, open 24 hours.</strong> Free weights, rowers and a full cardio line.</li>
+          </ul>
+          <a class="btn btn--outline" href="mailto:spa@asedahouse.com?subject=Spa%20booking" data-reveal style="--i:3">Book a treatment</a>
+        </div>
+        <div class="split__media split__media--pair" data-reveal style="--i:1">
+          <figure><img src="assets/images/wellness/deck-pool-800.webp" width="800" height="533" loading="lazy" alt="A timber deck with loungers beside the pool, the sea beyond the low wall"></figure>
+          <figure><img src="assets/images/wellness/hot-stones-800.webp" width="800" height="533" loading="lazy" alt="Warm basalt stones laid along a guest's back during a massage"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Events ============ -->
+    <section class="section" id="events" aria-labelledby="events-title">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <h2 class="t-h2" id="events-title" data-reveal>Meetings and weddings</h2>
+          <p class="lead" data-reveal style="--i:1">An events team that has run launches, weddings and three-day conferences.</p>
+          <dl class="capacity" data-reveal style="--i:2">
+            <div><dt>Boardroom</dt><dd class="tabular">14 seated</dd></div>
+            <div><dt>Ballroom</dt><dd class="tabular">140 seated</dd></div>
+            <div><dt>Garden lawn</dt><dd class="tabular">180 standing</dd></div>
+          </dl>
+          <a class="btn btn--outline" href="mailto:events@asedahouse.com?subject=Event%20enquiry" data-reveal style="--i:3">Plan an event</a>
+        </div>
+        <figure class="split__media" data-reveal>
+          <img src="assets/images/events/banquet-1400.webp"
+               srcset="assets/images/events/banquet-800.webp 800w, assets/images/events/banquet-1400.webp 1400w"
+               sizes="(min-width: 960px) 50vw, 100vw" width="1400" height="933" loading="lazy"
+               alt="Round tables laid for a wedding dinner under chandeliers in the ballroom">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Book direct ============ -->
+    <section class="section section--dark" id="book-direct" aria-labelledby="direct-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="t-h2" id="direct-title" data-reveal>Book direct with the house</h2>
+          <p data-reveal style="--i:1">Reservations reply within the hour, 07:00 to 22:00 GMT, or call <a href="tel:+233302701840">+233 30 270 1840</a>.</p>
+        </div>
+        <ul class="perks">
+          <li data-reveal><i class="bi bi-tag" aria-hidden="true"></i><strong>The lowest rate</strong>Find it cheaper elsewhere and we match it, then take off ten percent.</li>
+          <li data-reveal style="--i:1"><i class="bi bi-cup-hot" aria-hidden="true"></i><strong>Breakfast included</strong>For everyone in the room, every night, children too.</li>
+          <li data-reveal style="--i:2"><i class="bi bi-car-front" aria-hidden="true"></i><strong>A car at Kotoka</strong>Free with suites and stays of four nights or more.</li>
+          <li data-reveal style="--i:3"><i class="bi bi-calendar-check" aria-hidden="true"></i><strong>Free date changes</strong>Up to 48 hours before arrival on flexible rates.</li>
+        </ul>
+        <div class="section-foot" data-reveal>
+          <a class="btn btn--light" href="booking.html">Check availability</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Reviews ============ -->
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="t-h2" id="reviews-title" data-reveal>What guests say</h2>
+        </div>
+        <div class="reviews">
+          <figure class="review" data-reveal>
+            <blockquote><p>I asked for a quiet room and got the one at the end of the garden, with the sea just loud enough to sleep to.</p></blockquote>
+            <figcaption><strong>Marguerite L.</strong> Lyon · Five nights</figcaption>
+          </figure>
+          <figure class="review" data-reveal style="--i:1">
+            <blockquote><p>We ran a three-day partner meeting here. The boardroom worked, the Wi-Fi held, and dinner on the lawn did more than our slides.</p></blockquote>
+            <figcaption><strong>Kwabena A.</strong> Kumasi · Conference, 22 guests</figcaption>
+          </figure>
+          <figure class="review" data-reveal style="--i:2">
+            <blockquote><p>The driver was waiting at arrivals at two in the morning with cold water and our names spelled right.</p></blockquote>
+            <figcaption><strong>Danielle and Marcus R.</strong> Atlanta · Family of four</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Location ============ -->
+    <section class="section section--tint" id="location" aria-labelledby="location-title">
+      <div class="container split">
+        <div class="split__text">
+          <h2 class="t-h2" id="location-title" data-reveal>Location</h2>
+          <address class="lead" data-reveal style="--i:1">14 La Beach Road, Labadi<br>Accra, Ghana</address>
+          <table class="distances" data-reveal style="--i:2">
+            <caption class="visually-hidden">Travel times from Aseda House</caption>
+            <tbody>
+              <tr><th scope="row">Labadi Beach</th><td class="tabular">4 min walk</td></tr>
+              <tr><th scope="row">Osu, Oxford Street</th><td class="tabular">12 min drive</td></tr>
+              <tr><th scope="row">W.E.B. Du Bois Centre</th><td class="tabular">15 min drive</td></tr>
+              <tr><th scope="row">Kotoka International Airport</th><td class="tabular">25 min drive</td></tr>
+              <tr><th scope="row">Aburi Botanical Gardens</th><td class="tabular">70 min drive</td></tr>
+            </tbody>
+          </table>
+          <div class="button-row" data-reveal style="--i:3">
+            <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=La+Beach+Road+Labadi+Accra" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="link-arrow" href="tel:+233302701840">+233 30 270 1840</a>
+          </div>
+        </div>
+        <figure class="split__media" data-reveal style="--i:1">
+          <img src="assets/images/exterior/beach-palm-1400.webp"
+               srcset="assets/images/exterior/beach-palm-800.webp 800w, assets/images/exterior/beach-palm-1400.webp 1400w"
+               sizes="(min-width: 960px) 50vw, 100vw" width="1400" height="933" loading="lazy"
+               alt="A single palm leaning over pale sand and a calm turquoise sea">
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__cols">
+      <div>
+        <p class="wordmark site-footer__brand">Aseda House</p>
+        <address>14 La Beach Road, Labadi<br>Accra, Ghana</address>
+      </div>
+      <nav aria-label="Footer">
+        <p class="site-footer__head">Explore</p>
+        <ul>
+          <li><a href="index.html#rooms">Rooms and suites</a></li>
+          <li><a href="index.html#dining">Dining</a></li>
+          <li><a href="index.html#wellness">Pool, spa and gym</a></li>
+          <li><a href="index.html#events">Meetings and weddings</a></li>
+          <li><a href="booking.html">Book a stay</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="site-footer__head">Contact</p>
+        <ul>
+          <li><a href="tel:+233302701840">+233 30 270 1840</a></li>
+          <li><a href="mailto:reservations@asedahouse.com">reservations@asedahouse.com</a></li>
+          <li>Reception open 24 hours</li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__head">Your stay</p>
+        <ul class="tabular">
+          <li>Check-in from 14:00</li>
+          <li>Check-out until 12:00</li>
+          <li>Breakfast 06:30 to 10:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <p>© 2026 Aseda House. A fictional hotel, designed and built by Chorvex as a website demonstration. Photography from Unsplash.</p>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

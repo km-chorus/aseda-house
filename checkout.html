@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Your details · Aseda House</title>
+  <meta name="description" content="Complete your reservation at Aseda House, Labadi, Accra.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F6F5F1">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,30&family=Instrument+Sans:wght@400..600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-booking">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="wordmark" href="index.html" aria-label="Aseda House, home">Aseda House</a>
+      <p class="site-header__secure"><i class="bi bi-lock" aria-hidden="true"></i> Secure booking</p>
+      <a class="site-header__phone tabular" href="tel:+233302701840">+233 30 270 1840</a>
+    </div>
+  </header>
+
+  <main id="main" class="flow">
+    <div class="container">
+      <ol class="steps" aria-label="Booking steps">
+        <li class="is-done"><a href="booking.html" data-back>Choose a room</a></li>
+        <li class="is-current" aria-current="step"><span>Your details</span></li>
+        <li><span>Confirmation</span></li>
+      </ol>
+
+      <h1 class="t-h2 flow__title" data-page-title>Your details</h1>
+
+      <div class="flow__layout">
+        <div data-checkout-body>
+          <form class="checkout" data-checkout novalidate>
+
+            <fieldset class="panel">
+              <legend class="panel__title">Who is staying</legend>
+              <div class="fields">
+                <div class="field">
+                  <label for="c-first">First name</label>
+                  <input id="c-first" name="firstName" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="c-last">Last name</label>
+                  <input id="c-last" name="lastName" autocomplete="family-name" required>
+                </div>
+                <div class="field">
+                  <label for="c-email">Email</label>
+                  <input id="c-email" name="email" type="email" autocomplete="email" required aria-describedby="c-email-hint">
+                  <p class="field__hint" id="c-email-hint">Your confirmation goes here.</p>
+                </div>
+                <div class="field">
+                  <label for="c-phone">Phone, with country code</label>
+                  <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 24 000 0000" required>
+                </div>
+                <div class="field field--wide">
+                  <label for="c-country">Country of residence</label>
+                  <select id="c-country" name="country" autocomplete="country-name" required>
+                    <option value="">Choose a country</option>
+                    <option>Ghana</option>
+                    <option>Nigeria</option>
+                    <option>Côte d’Ivoire</option>
+                    <option>Togo</option>
+                    <option>South Africa</option>
+                    <option>Kenya</option>
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>Netherlands</option>
+                    <option>China</option>
+                    <option>India</option>
+                    <option>United Arab Emirates</option>
+                    <option>Another country</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="panel">
+              <legend class="panel__title">Your arrival</legend>
+              <div class="fields">
+                <div class="field field--wide">
+                  <label for="c-arrival">Expected arrival time</label>
+                  <select id="c-arrival" name="arrival">
+                    <option value="">I don’t know yet</option>
+                    <option>Before 14:00 (early check-in on request)</option>
+                    <option>14:00 to 17:00</option>
+                    <option>17:00 to 20:00</option>
+                    <option>20:00 to midnight</option>
+                    <option>After midnight</option>
+                  </select>
+                </div>
+              </div>
+              <label class="choice">
+                <input type="checkbox" name="pickup" value="yes">
+                <span class="choice__text">
+                  <span class="choice__name">Pick me up at Kotoka Airport</span>
+                  <span class="choice__terms">Our driver meets you at arrivals. 25 minutes to the house.</span>
+                </span>
+                <span class="choice__price" data-pickup-price></span>
+              </label>
+              <div class="field field--wide" data-flight hidden>
+                <label for="c-flight">Flight number</label>
+                <input id="c-flight" name="flight" autocomplete="off" placeholder="For example KQ 510">
+              </div>
+            </fieldset>
+
+            <fieldset class="panel">
+              <legend class="panel__title">Special requests</legend>
+              <div class="field field--wide">
+                <label for="c-requests">Anything we should prepare? <span class="field__optional">Optional</span></label>
+                <textarea id="c-requests" name="requests" rows="4" placeholder="A cot, a quiet room, dietary needs, a celebration…"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="panel">
+              <legend class="panel__title">How you would like to pay</legend>
+              <label class="choice">
+                <input type="radio" name="payment" value="hotel" checked>
+                <span class="choice__text">
+                  <span class="choice__name">Pay at the hotel</span>
+                  <span class="choice__terms" data-pay-hotel-note>Nothing is charged today. Pay by card, Mobile Money or cash when you arrive.</span>
+                </span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="payment" value="now">
+                <span class="choice__text">
+                  <span class="choice__name">Pay now by card or Mobile Money</span>
+                  <span class="choice__terms">We email you a secure payment link. MTN MoMo, Telecel Cash, Visa and Mastercard.</span>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="checkout__foot">
+              <label class="consent">
+                <input type="checkbox" name="terms" required>
+                <span>I agree to the booking terms and the cancellation policy for this rate.</span>
+              </label>
+              <p class="form-error" data-form-error tabindex="-1" hidden>We could not send your reservation. Please try again, or call +233 30 270 1840.</p>
+              <button class="btn btn--accent btn--block checkout__submit" type="submit">Confirm reservation</button>
+              <a class="link-arrow" href="booking.html" data-back><i class="bi bi-arrow-left" aria-hidden="true"></i> Change room or dates</a>
+            </div>
+          </form>
+        </div>
+
+        <aside class="summary" data-summary aria-label="Your stay"></aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__cols">
+      <div>
+        <p class="wordmark site-footer__brand">Aseda House</p>
+        <address>14 La Beach Road, Labadi<br>Accra, Ghana</address>
+      </div>
+      <nav aria-label="Footer">
+        <p class="site-footer__head">Explore</p>
+        <ul>
+          <li><a href="index.html#rooms">Rooms and suites</a></li>
+          <li><a href="index.html#dining">Dining</a></li>
+          <li><a href="index.html#wellness">Pool, spa and gym</a></li>
+          <li><a href="index.html#events">Meetings and weddings</a></li>
+          <li><a href="booking.html">Book a stay</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="site-footer__head">Contact</p>
+        <ul>
+          <li><a href="tel:+233302701840">+233 30 270 1840</a></li>
+          <li><a href="mailto:reservations@asedahouse.com">reservations@asedahouse.com</a></li>
+          <li>Reception open 24 hours</li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__head">Your stay</p>
+        <ul class="tabular">
+          <li>Check-in from 14:00</li>
+          <li>Check-out until 12:00</li>
+          <li>Breakfast 06:30 to 10:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <p>© 2026 Aseda House. A fictional hotel, designed and built by Chorvex as a website demonstration. Photography from Unsplash.</p>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
+</body>
+</html>

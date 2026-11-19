@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Aseda House — homepage
+   The hero, then sections that share one container and one heading pattern
+   ========================================================================== */
+
+figure { margin: 0; }
+figure > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   Hero — one full-bleed photograph, the name of the place, the booking bar
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2.5rem;
+  padding: calc(var(--header-h) + 2rem) var(--margin) var(--margin);
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--limestone);
+}
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 62%;
+  z-index: -2;
+  animation: hero-settle 2.4s var(--ease-out) both;
+}
+@keyframes hero-settle {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(20 25 23 / 0.5) 0%, rgb(20 25 23 / 0.12) 26%, rgb(20 25 23 / 0.12) 55%, rgb(20 25 23 / 0.6) 100%); /* taste-skill-ignore: neutral scrim under text on a photograph */
+}
+.hero__copy {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  animation: rise 1.2s var(--ease-out) 0.15s both;
+}
+.hero__title { max-width: 12ch; margin-inline: auto; }
+.hero__lede {
+  margin: 2rem auto 0;
+  max-width: 40ch;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+}
+
+/* Booking bar: a real form; the lines between fields are form chrome */
+.booking-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.5fr) auto;
+  width: min(1180px, 100%);
+  gap: 2px;
+  justify-self: center;
+  animation: rise 1.2s var(--ease-out) 0.4s both;
+}
+.booking-bar__field {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--limestone);
+  color: var(--ink);
+  transition: background-color var(--dur) ease;
+}
+.booking-bar__field:hover,
+.booking-bar__field:focus-within { background: #fff; }
+.booking-bar__field label {
+  font-size: var(--step-small);
+  color: var(--text-soft);
+}
+.booking-bar__field input,
+.booking-bar__field select {
+  width: 100%;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.booking-bar__field select {
+  padding-right: 1.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231C2321' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 2px center;
+}
+.booking-bar__field input:focus,
+.booking-bar__field select:focus { outline: none; }
+.booking-bar__field:focus-within { outline: 2px solid var(--accent); outline-offset: -2px; }
+.booking-bar__submit { min-height: 100%; padding-inline: 2.25rem; }
+.booking-bar__quote {
+  grid-column: 1 / -1;
+  padding-top: 0.9rem;
+  font-size: var(--step-small);
+  color: var(--limestone);
+}
+.booking-bar__quote strong { font-weight: 600; }
+
+/* ==========================================================================
+   Shared section pattern — one container, one heading style, used everywhere
+   ========================================================================== */
+.container {
+  width: min(100% - 2 * var(--margin), var(--container));
+  margin-inline: auto;
+}
+.section { padding-block: var(--section); }
+.section--tint { background: var(--linen); }
+.section--dark { background: var(--palm); color: var(--limestone); }
+.section--dark a:not(.btn) { text-decoration: underline; text-underline-offset: 4px; }
+
+.section-head {
+  max-width: 46rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+.section-head p { margin-top: 1rem; }
+.section-foot { margin-top: clamp(2.5rem, 5vw, 3.5rem); text-align: center; }
+
+.lead {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: var(--step-h3);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-style: normal;
+}
+
+/* Split: text on one side, picture on the other */
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+.split--reverse .split__media { order: -1; }
+.split__text > * + * { margin-top: 1.5rem; }
+.split__text .lead { margin-top: 1.25rem; }
+.split__text .btn,
+.split__text .button-row { margin-top: 2.25rem; }
+.split__text p:not(.lead) { max-width: 52ch; }
+.split__media { aspect-ratio: 4 / 5; overflow: hidden; }
+.split__media img { transition: transform 1.2s var(--ease-out); }
+.split__media:hover img { transform: scale(1.03); }
+.split__media--pair {
+  aspect-ratio: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+.split__media--pair figure { aspect-ratio: 3 / 4; overflow: hidden; }
+.split__media--pair figure:last-child { margin-top: 4rem; }
+
+/* Welcome: three facts */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 2.5rem;
+  padding-top: 0.75rem;
+}
+.facts dt {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 30, "opsz" 72;
+  font-size: var(--step-h3);
+  line-height: 1.1;
+}
+.facts dd { font-size: var(--step-small); color: var(--text-soft); }
+
+/* ==========================================================================
+   Rooms — three-up cards, each going straight to its rates
+   ========================================================================== */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem) var(--gap);
+}
+.room-card a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--limestone);
+  transition: background-color var(--dur) ease;
+}
+.room-card__img { aspect-ratio: 4 / 3; overflow: hidden; }
+.room-card__img img { transition: transform 1s var(--ease-out); }
+.room-card a:hover .room-card__img img { transform: scale(1.04); }
+.room-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+.room-card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.room-card__meta { font-size: var(--step-small); color: var(--text-soft); }
+.room-card__price { margin-top: auto; padding-top: 1rem; }
+.room-card__price strong { font-size: 1.25rem; font-weight: 600; }
+.room-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.room-card__cta .bi { transition: transform var(--dur) var(--ease-out); }
+.room-card a:hover .room-card__cta .bi { transform: translateX(4px); }
+
+/* ==========================================================================
+   Dining, wellness, events — lists inside the split
+   ========================================================================== */
+.venues { display: grid; gap: 1.5rem; }
+.venue__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+.venue__name,
+.capacity dt {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.375rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.venue__status {
+  font-size: var(--step-small);
+  color: var(--text-soft);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.venue__status.is-open { color: var(--palm); font-weight: 600; }
+
+.checklist { display: grid; gap: 1rem; }
+.checklist li { position: relative; padding-left: 1.75rem; max-width: 52ch; }
+.checklist li::before {
+  content: "\F26E"; /* bootstrap-icons check-lg */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: var(--accent);
+}
+.checklist strong { font-weight: 600; }
+
+.capacity { display: grid; gap: 0.25rem; max-width: 26rem; }
+.capacity div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: 0.6rem;
+}
+.capacity dd { font-weight: 600; }
+
+/* ==========================================================================
+   Book direct — four reasons on the green field
+   ========================================================================== */
+.perks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem var(--gap);
+}
+.perks li { display: grid; gap: 0.4rem; align-content: start; }
+.perks .bi { font-size: 1.75rem; color: var(--brass); margin-bottom: 0.5rem; }
+.perks strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.375rem;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Reviews
+   ========================================================================== */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: var(--linen);
+}
+.review blockquote p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.375rem;
+  line-height: 1.35;
+}
+.review figcaption { font-size: var(--step-small); color: var(--text-soft); }
+.review figcaption strong { display: block; color: var(--ink); font-weight: 600; }
+
+/* ==========================================================================
+   Location
+   ========================================================================== */
+.distances { width: 100%; max-width: 30rem; border-collapse: collapse; }
+.distances th,
+.distances td {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--sand);
+  text-align: left;
+  font-weight: 400;
+}
+.distances td { text-align: right; white-space: nowrap; color: var(--text-soft); }
+.button-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
+
+/* ==========================================================================
+   Tablets and phones
+   ========================================================================== */
+@media (max-width: 959px) {
+  .split { grid-template-columns: 1fr; }
+  .split--reverse .split__media { order: 0; }
+  .split__media { aspect-ratio: 4 / 3; }
+  .room-grid,
+  .reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .perks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  .room-grid,
+  .reviews,
+  .perks { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .split__media--pair figure:last-child { margin-top: 2rem; }
+  .venue__head { flex-direction: column; gap: 0.1rem; }
+}
+@media (hover: none) {
+  .split__media:hover img,
+  .room-card a:hover .room-card__img img { transform: none; }
+}
