@@ -193,3 +193,5 @@ body.menu-open { overflow: hidden; }
 .site-footer a:hover { color: var(--limestone); }
 .site-footer__head { color: var(--limestone); font-weight: 600; margin-bottom: 0.9rem; }
 .site-footer__legal { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.site-footer__credit { color: var(--limestone); font-weight: 700; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color var(--dur-fast) ease; }
+.site-footer__credit:hover { text-decoration-color: currentColor; }
