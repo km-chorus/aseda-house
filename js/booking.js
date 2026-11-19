@@ -341,7 +341,7 @@
             <button class="btn btn--outline" type="button" onclick="window.print()">Print this page</button>
             <a class="link-arrow" href="index.html">Back to the house <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
           </div>
-          <p class="confirm__help">Questions before you arrive? Call <a href="tel:+233302701840">+233 30 270 1840</a> or write to <a href="mailto:reservations@asedahouse.com?subject=${encodeURIComponent('Reservation ' + r.reference)}">reservations@asedahouse.com</a>.</p>
+          <p class="confirm__help">Questions before you arrive? Call <a href="tel:+233556556080">+233 55 655 6080</a> or write to <a href="mailto:jbgoddy340@gmail.com?subject=${encodeURIComponent('Reservation ' + r.reference)}">jbgoddy340@gmail.com</a>.</p>
         </section>`;
       renderSummary(summary, stay, { transfer: r.arrival.pickup });
       const c = $('.confirm');
